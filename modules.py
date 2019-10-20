@@ -21,22 +21,22 @@ class Card(pygame.sprite.Sprite):
 	def draw(self, screen, mouse_pos):
 		pygame.draw.rect(screen, self.bg_colors[1], self.rect, 0)
 
-		pygame.draw.rect(screen, BLACK, [LENGTH/12, WIDTH*25/108, LENGTH*20/36, 3])
-		pygame.draw.rect(screen, BLACK, [LENGTH/12, WIDTH*40/108, LENGTH*20/36, 10])
-		pygame.draw.rect(screen, BLACK, [LENGTH/12, WIDTH*55/108, LENGTH*20/36, 3])
+		pygame.draw.rect(screen, BLACK, [LENGTH*5/36, WIDTH*35/108, LENGTH*20/36+10, 3])
+		pygame.draw.rect(screen, BLACK, [LENGTH*5/36, WIDTH*50/108, LENGTH*20/36+10, 10])
+		pygame.draw.rect(screen, BLACK, [LENGTH*5/36, WIDTH*65/108+10, LENGTH*20/36+10, 3])
 
-		pygame.draw.rect(screen, BLACK, [LENGTH*8/36, WIDTH*5/54, 3, WIDTH*20/36])
-		pygame.draw.rect(screen, BLACK, [LENGTH*13/36, WIDTH*5/54, 10, WIDTH*20/36])
-		pygame.draw.rect(screen, BLACK, [LENGTH*18/36, WIDTH*5/54, 3, WIDTH*20/36])
+		pygame.draw.rect(screen, BLACK, [LENGTH*10/36, WIDTH*10/54, 3, WIDTH*20/36+10])
+		pygame.draw.rect(screen, BLACK, [LENGTH*15/36, WIDTH*10/54, 10, WIDTH*20/36+10])
+		pygame.draw.rect(screen, BLACK, [LENGTH*20/36+10, WIDTH*10/54, 3, WIDTH*20/36+10])
 
-		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*25/108, LENGTH*5/36, 3])
-		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*40/108, LENGTH*5/36, 3])
-		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*55/108, LENGTH*5/36, 3])
+		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*35/108, LENGTH*5/36, 3])
+		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*50/108, LENGTH*5/36, 3])
+		pygame.draw.rect(screen, BLACK, [LENGTH*11/12, WIDTH*65/108, LENGTH*5/36, 3])
 
 		if self.text == "?":
 			pygame.draw.rect(screen, self.bg_colors[2], self.rect, 0)
-		if self.rect.collidepoint(mouse_pos):
-			pygame.draw.rect(screen, self.bg_colors[0], self.rect, 0)
+			if self.rect.collidepoint(mouse_pos):
+				pygame.draw.rect(screen, self.bg_colors[0], self.rect, 0)
 
 		font_color = self.font_colors[self.is_selected]
 		text_render = self.font.render(self.text, True, font_color)
