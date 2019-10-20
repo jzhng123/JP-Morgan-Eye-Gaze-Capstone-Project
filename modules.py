@@ -2,8 +2,8 @@ import copy
 import random
 import pygame
 
-LENGTH = 1080
-WIDTH = 720
+LENGTH = 1920
+WIDTH = 1080
 BLACK = [0,0,0]
 
 class Card(pygame.sprite.Sprite):
