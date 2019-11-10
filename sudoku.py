@@ -18,8 +18,8 @@ AZURE = (0, 204, 204)
 
 # CURRENTPATH = os.path.abspath(os.path.dirname(__file__))
 # FONTPATH = os.path.join(CURRENTPATH, 'fonts/font.TTF')
-LENGTH = 1920
-WIDTH = 1080
+LENGTH = 1280	
+WIDTH = 720
 # LENGTH = 1080
 # WIDTH = 720
 SCREENSIZE = (LENGTH, WIDTH)
@@ -125,16 +125,17 @@ def main():
 
 	#Get size of screen
 	info = pygame.display.Info()
-
+	width = info.current_w
+	height = info.current_h
 	#width = info.current_w
-	width = 1980
+	#width = 1280
 
 	#height = info.current_h
-	height = 1080
+	#height = 720
 
 	SCREENSIZE = (width, height)
 
-	screen = pygame.display.set_mode(SCREENSIZE)
+	screen = pygame.display.set_mode(SCREENSIZE, pygame.RESIZABLE)
 
 	game_gen = gameGenerator()
 	game_gen.generate()
@@ -189,7 +190,7 @@ def main():
 			if selected_button and selected_button[0] == "NEXT":
 				counter = 60
 				print(game_gen.level)
-				if game_gen.level == 8:
+				if game_gen.level == 11:
 					finished = True
 
 			if selected_button and each.attribute == selected_button[0]:

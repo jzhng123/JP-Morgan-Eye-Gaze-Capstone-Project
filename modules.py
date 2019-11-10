@@ -2,8 +2,8 @@ import copy
 import random
 import pygame
 
-LENGTH = 1920
-WIDTH = 1080
+LENGTH = 1280
+WIDTH = 720
 BLACK = [0,0,0]
 
 class Card(pygame.sprite.Sprite):
@@ -94,24 +94,29 @@ class gameGenerator():
 		if level == 0:
 			self.puzzle = [1, "?", 3, 4, 4, 3, 2, 1, 2, 4, "?", 3, 3, 1, 4, 2]
 		elif level == 1:
-			self.puzzle = [2, 4, "?", 3, 3, 1, 2, 4, 1, 3, 4, "?", 4, 2, 3, 1]
+			self.puzzle = [2, 4, 3, 1, 3, 1, 4, 2, 1, 3, "?", 4, 4, "?", 1, 3]
 		elif level == 2:
 			self.puzzle = ["?", 2, 4, 1, 4, 1, 3, 2, 2, 4, "?", 3, 1, 3, 2, 4]
-		
-		#medium
 		elif level == 3:
-			self.puzzle = ["?", 3, 1, "?", 1, "?", "?", 3, 2, "?", 3, 4, "?", 4, 2, "?"]
+			self.puzzle = [2, 4, "?", 3, 3, 1, 2, 4, 1, 3, 4, "?", 4, 2, 3, 1]
+		#medium
 		elif level == 4:
-			self.puzzle = [3, "?", 1, "?", "?", 1, "?", 3, "?", 3, 4, "?", 1, 4, "?", 2]
+			self.puzzle = ["?", 3, 1, "?", 1, "?", "?", 3, 2, "?", 3, 4, "?", 4, 2, "?"]
 		elif level == 5:
+			self.puzzle = [2, 4, 3, 1, 3, "?", 4, "?", "?", 3, "?", "?", "?", "?", "?", 3]
+		elif level == 6:
+			self.puzzle = [3, "?", 1, "?", "?", 1, "?", 3, "?", 3, 4, "?", 1, 4, "?", 2]
+		elif level == 7:
 			self.puzzle = [1, "?", 2, 3, "?", 3, "?", 4, 3, "?", 4, "?", "?", 1, "?", 2]
 
 		#hard
-		elif level == 6:
-			self.puzzle = [2, "?", "?", "?", "?", "?", 4, "?", "?", 3, "?", "?", "?", "?", "?", 3]
-		elif level == 7:
-			self.puzzle = ["?", 4, "?", "?", "?", "?", 3, "?", "?", 2, "?", "?", 1, "?", "?", "?"]
 		elif level == 8:
+			self.puzzle = [2, "?", "?", "?", "?", "?", 4, "?", "?", 3, "?", "?", "?", "?", "?", 3]
+		elif level == 9:
+			self.puzzle = ["?", 4, "?", "?", "?", "?", 3, "?", "?", 2, "?", "?", 1, "?", "?", "?"]
+		elif level == 10:
 			self.puzzle = ["?", "?", "?", 3, "?", 3, 4, "?", "?", "?", 2, "?", "?", 2, "?", "?"]
+		elif level == 11:
+			self.puzzle = ["?", "?", 1, "?", "?", "?", "?", "?", "?", 3, "?", 2, "?", 2, "?", "?"]
 		
 		return self.puzzle
