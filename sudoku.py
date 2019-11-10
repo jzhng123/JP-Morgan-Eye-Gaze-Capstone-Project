@@ -3,6 +3,7 @@ import sys
 import pygame
 from modules import *
 from fractions import Fraction
+import csv
 
 
 '''Constants'''
@@ -152,6 +153,8 @@ def main():
 	selected_number = []
 	selected_button = []
 
+	next_time = {}
+
 	blanks = []
 	for i in range(len(game_gen.puzzle)):
 		if game_gen.puzzle[i] == "?":
@@ -189,6 +192,7 @@ def main():
 		for each in button_group:
 			if selected_button and selected_button[0] == "NEXT":
 				counter = 60
+				next_time[game_gen.level+1] = pygame.time.get_ticks()
 				print(game_gen.level)
 				if game_gen.level == 11:
 					finished = True
@@ -210,6 +214,11 @@ def main():
 				showInfo("Ready? Start!", screen, height, width)
 			else:
 				showInfo("Congrats! You've finished the game", screen, height, width)
+				with open('result.csv', mode='w') as result:
+					fieldnames = range(1, 13)
+					writer = csv.DictWriter(result, fieldnames=fieldnames)
+					writer.writeheader()
+					writer.writerow(next_time)
 	
 
 		pygame.display.flip()
